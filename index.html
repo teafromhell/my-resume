@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Junior Frontend Resume</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body>
+    <div class="resume">
+      <div class="banner">
+        <div class="banner__fullname">Lavrov Dmitriy</div>
+        <div class="banner__position">Junior Frontend Developer</div>
+        <div v-if="person.birth" class="banner__location">
+          Gatchina, Leningrad oblast
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="content__left">
+          <div class="section">
+            <div class="section__section-headline">About me</div>
+
+            <div class="section-content section-content--plain">
+              Junior Frontend Developer seeking an entry-level position with
+              company to use my skills in coding and improve myself as a
+              software engineer. Looking forward to help grow your business.
+              <br />
+              <br />
+              Able to quickly adapt to circumstances. Capable of analyzing and
+              interpreting information. Creative and curious. Not afraid to
+              learn new things.
+            </div>
+          </div>
+
+          <div v-if="person.skills" class="section">
+            <div class="section__section-headline">Skills</div>
+
+            <div class="section-content-grid">
+              <a
+                v-for="(skill, index) in person.skills"
+                class="grid-item"
+                :key="index"
+                :class="{ link: skill.url !== undefined}"
+                :href="skill.url"
+              >
+                <span class="squarred-grid-item"> HTML/CSS </span>
+              </a>
+              <a
+                v-for="(skill, index) in person.skills"
+                class="grid-item"
+                :key="index"
+                :class="{ link: skill.url !== undefined}"
+                :href="skill.url"
+              >
+                <span class="squarred-grid-item"> SASS </span>
+              </a>
+              <a
+                v-for="(skill, index) in person.skills"
+                class="grid-item"
+                :key="index"
+                :class="{ link: skill.url !== undefined}"
+                :href="skill.url"
+              >
+                <span class="squarred-grid-item"> JavaScript </span>
+              </a>
+              <a
+                v-for="(skill, index) in person.skills"
+                class="grid-item"
+                :key="index"
+                :class="{ link: skill.url !== undefined}"
+                :href="skill.url"
+              >
+                <span class="squarred-grid-item"> React </span>
+              </a>
+              <a
+                v-for="(skill, index) in person.skills"
+                class="grid-item"
+                :key="index"
+                :class="{ link: skill.url !== undefined}"
+                :href="skill.url"
+              >
+                <span class="squarred-grid-item"> React Hooks </span>
+              </a>
+              <a
+                v-for="(skill, index) in person.skills"
+                class="grid-item"
+                :key="index"
+                :class="{ link: skill.url !== undefined}"
+                :href="skill.url"
+              >
+                <span class="squarred-grid-item"> Redux-Toolkit </span>
+              </a>
+              <a
+                v-for="(skill, index) in person.skills"
+                class="grid-item"
+                :key="index"
+                :class="{ link: skill.url !== undefined}"
+                :href="skill.url"
+              >
+                <span class="squarred-grid-item"> React-Router </span>
+              </a>
+              <a
+                v-for="(skill, index) in person.skills"
+                class="grid-item"
+                :key="index"
+                :class="{ link: skill.url !== undefined}"
+                :href="skill.url"
+              >
+                <span class="squarred-grid-item"> axios </span>
+              </a>
+              <a
+                v-for="(skill, index) in person.skills"
+                class="grid-item"
+                :key="index"
+                :class="{ link: skill.url !== undefined}"
+                :href="skill.url"
+              >
+                <span class="squarred-grid-item"> REST </span>
+              </a>
+              <a
+                v-for="(skill, index) in person.skills"
+                class="grid-item"
+                :key="index"
+                :class="{ link: skill.url !== undefined}"
+                :href="skill.url"
+              >
+                <span class="squarred-grid-item"> Git </span>
+              </a>
+              <a
+                v-for="(skill, index) in person.skills"
+                class="grid-item"
+                :key="index"
+                :class="{ link: skill.url !== undefined}"
+                :href="skill.url"
+              >
+                <span class="squarred-grid-item"> npm </span>
+              </a>
+              <a
+                v-for="(skill, index) in person.skills"
+                class="grid-item"
+                :key="index"
+                :class="{ link: skill.url !== undefined}"
+                :href="skill.url"
+              >
+                <span class="squarred-grid-item"> Bootstrap </span>
+              </a>
+              <a
+                v-for="(skill, index) in person.skills"
+                class="grid-item"
+                :key="index"
+                :class="{ link: skill.url !== undefined}"
+                :href="skill.url"
+              >
+                <span class="squarred-grid-item"> Responsive Design </span>
+              </a>
+            </div>
+          </div>
+          <div class="section">
+            <div class="section__section-headline">
+              English Language Proficiency
+            </div>
+
+            <div class="section-content section-content--plain">
+              Intermediate and sometimes above. Can effortlessly read literature
+              of any sort. Speaking is not so fluent though.
+            </div>
+          </div>
+
+          <div class="section">
+            <div class="section__section-headline">Contact</div>
+
+            <div class="section-content section-content--plain">
+              <div class="section-link">
+                <i class="section-link__icon material-icons">business</i
+                >Gatchina
+              </div>
+
+              <div class="section-link link" :href="contactLinks.email">
+                <i class="section-link__icon material-icons">mail</i>
+                teafromhell@gmail.com
+              </div>
+
+              <div class="section-link">
+                <i class="section-link__icon material-icons">phone</i>
+                +7 (906) 257 84 23
+              </div>
+
+              <!-- <a
+                v-if="person.contact.website"
+                class="section-link link"
+                href="https://github.com/teafromhell/"
+                target="_blank"
+              >
+                <i class="section-link__icon fa fa-globe"></i>
+                github.com/teafromhell
+              </a> -->
+
+              <a
+                v-if="person.contact.github"
+                class="section-link link"
+                href="https://github.com/teafromhell/"
+                target="_blank"
+              >
+                <svg
+                  class="section-link__icon"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  fill="white"
+                  class="bi bi-github"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"
+                  />
+                </svg>
+                teafromhell
+              </a>
+
+              <a
+                v-if="person.contact.medium"
+                class="section-link link"
+                href="https://t.me/jmijmu"
+                target="_blank"
+              >
+                <svg
+                  class="section-link__icon"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  fill="white"
+                  class="bi bi-telegram"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.287 5.906c-.778.324-2.334.994-4.666 2.01-.378.15-.577.298-.595.442-.03.243.275.339.69.47l.175.055c.408.133.958.288 1.243.294.26.006.549-.1.868-.32 2.179-1.471 3.304-2.214 3.374-2.23.05-.012.12-.026.166.016.047.041.042.12.037.141-.03.129-1.227 1.241-1.846 1.817-.193.18-.33.307-.358.336a8.154 8.154 0 0 1-.188.186c-.38.366-.664.64.015 1.088.327.216.589.393.85.571.284.194.568.387.936.629.093.06.183.125.27.187.331.236.63.448.997.414.214-.02.435-.22.547-.82.265-1.417.786-4.486.906-5.751a1.426 1.426 0 0 0-.013-.315.337.337 0 0 0-.114-.217.526.526 0 0 0-.31-.093c-.3.005-.763.166-2.984 1.09z"
+                  />
+                </svg>
+                @jmijmu
+              </a>
+              <a
+                v-if="person.contact.linkedin"
+                class="section-link link"
+                href="https://www.instagram.com/concreteandpigeons"
+                target="_blank"
+              >
+                <svg
+                  class="section-link__icon"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  fill="white"
+                  class="bi bi-instagram"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"
+                  />
+                </svg>
+                concreteandpigeons
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="content__right">
+          <div class="section">
+            <div class="section-headline">
+              <i class="section-headline__icon material-icons">work</i
+              >Experience
+            </div>
+
+            <div class="section-content">
+              <div
+                v-for="(experience, index) in person.experience"
+                :key="index"
+                class="section-content__item"
+                :class="{ link: experience.website !== undefined}"
+                :href="experience.website"
+              >
+                <span class="section-content__header">Junior Employee </span>
+                <span class="section-content__subheader">
+                  GBU DO Center 'Intellect'
+                  <span class="section-content__plain"
+                    >Lisiy Nos, Leningrad oblast</span
+                  >
+                </span>
+
+                <div class="section-content__text">
+                  since 02.2021 until mid-summer 2021
+                </div>
+                <span class="section-content__text--light"
+                  >As a creative and initiative worker i managed to set fresh
+                  media presentation of budget funded organisation. <br />duties
+                  and tasks: event management, administrative work, photography,
+                  maintaining social networks</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="section">
+            <div class="section-headline">
+              <i class="section-headline__icon material-icons">school</i>
+              Education
+            </div>
+
+            <div class="section-content">
+              <div
+                v-for="(education, index) in person.education"
+                class="section-content__item"
+                :key="index"
+                :class="{ link: education.website !== undefined}"
+                :href="education.website"
+              >
+                <span class="section-content__header"> Liceum №3 </span>
+                <span class="section-content__subheader"
+                  >completed secondary education
+                </span>
+                <span class="section-content__text">
+                  2001 - 2011, Gatchina
+                </span>
+                <span class="section-content__text--light"> </span>
+              </div>
+              <div
+                v-for="(education, index) in person.education"
+                class="section-content__item"
+                :key="index"
+                :class="{ link: education.website !== undefined}"
+                :href="education.website"
+              >
+                <span class="section-content__header"> SPbGU </span>
+                <span class="section-content__subheader"
+                  >faculty of chemistry, 1 cours
+                </span>
+                <span class="section-content__text"> 2011-2012 </span>
+                <span class="section-content__subheader"
+                  >faculty of history, 1 cours
+                </span>
+                <span class="section-content__text"> 2013-2014 </span>
+                <span class="section-content__text--light"> </span>
+              </div>
+            </div>
+          </div>
+
+          <div v-if="person.projects" class="section">
+            <div class="section-headline">
+              <i class="section-headline__icon material-icons">code</i>
+              Projects
+            </div>
+
+            <div class="section-content-grid">
+              <div
+                v-for="(project, index) in person.projects"
+                :key="index"
+                class="section-content__item-grid"
+              >
+                <span class="section-content__header"> Pokemon Game </span>
+                <span class="section-content__subheader"
+                  >React, axios, REST API, Grid</span
+                >
+                <span class="section-content__text">
+                  Built memory card game using public pokemon API.
+                </span>
+              </div>
+            </div>
+            <a
+              class="section-content__item-grid"
+              href="https://ancient-hamlet-27439.herokuapp.com/"
+              target="_blank"
+              >start game</a
+            >
+            <a
+              class="section-content__item-grid"
+              href="https://github.com/teafromhell/pokemon-memory-card-game"
+              target="_blank"
+              >git repo</a
+            >
+            <div class="section-content-grid">
+              <div
+                v-for="(project, index) in person.projects"
+                :key="index"
+                class="section-content__item-grid"
+                :class="{ link: project.url !== undefined}"
+                href="https://ancient-springs-90842.herokuapp.com/"
+                target="_blank"
+              >
+                <span class="section-content__header"> Camping site </span>
+                <span class="section-content__subheader"
+                  >React, Redux-Toolkit, React-Router, firebase, Custom
+                  Hook</span
+                >
+                <span class="section-content__text">
+                  Fully responsive project camping site with login/registration
+                  via firebase.
+                </span>
+              </div>
+            </div>
+            <a
+              class="section-content__item-grid"
+              href="https://ancient-springs-90842.herokuapp.com/"
+              target="_blank"
+              >visit site</a
+            >
+            <a
+              class="section-content__item-grid"
+              href="https://github.com/teafromhell/camping-site"
+              target="_blank"
+              >git repo</a
+            >
+            <div class="section-content-grid">
+              <div
+                v-for="(project, index) in person.projects"
+                :key="index"
+                class="section-content__item-grid"
+                :class="{ link: project.url !== undefined}"
+                href="https://teafromhell.github.io/todo-app/"
+                target="_blank"
+              >
+                <span class="section-content__header"> Todo List </span>
+                <span class="section-content__subheader"
+                  >React, Redux-Toolkit, CSS modules, Grid, Flex
+                </span>
+                <span class="section-content__text">
+                  Todo List app has responsive design and theme toggle.
+                </span>
+              </div>
+            </div>
+            <a
+              class="section-content__item-grid"
+              href="https://teafromhell.github.io/todo-app/"
+              target="_blank"
+              >start app</a
+            >
+            <a
+              class="section-content__item-grid"
+              href="https://github.com/teafromhell/todo-app"
+              target="_blank"
+              >git repo</a
+            >
+            <div class="section-content-grid">
+              <div
+                v-for="(project, index) in person.projects"
+                :key="index"
+                class="section-content__item-grid"
+                :class="{ link: project.url !== undefined}"
+                href="https://teafromhell.github.io/tip-calculator/"
+                target="_blank"
+              >
+                <span class="section-content__header"> Tip Calculator </span>
+                <span class="section-content__subheader"
+                  >React, Redux-Toolkit, Grid, Flex</span
+                >
+                <span class="section-content__text">
+                  Small app counts your and your company tip.
+                </span>
+              </div>
+            </div>
+            <a
+              class="section-content__item-grid"
+              href="https://teafromhell.github.io/tip-calculator/"
+              target="_blank"
+              >start app</a
+            >
+            <a
+              class="section-content__item-grid"
+              href="https://github.com/teafromhell/tip-calculator"
+              target="_blank"
+              >git repo</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <img src="./img/icon.jpg" class="picture" />
+    </div>
+  </body>
+</html>
