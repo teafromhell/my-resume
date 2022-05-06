@@ -17,14 +17,19 @@ a:visited {
     color: inherit;
   }
 .resume {
-  position: relative;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 80%;
+  height: 100%;
   font-family:'Roboto' !important;
   font-size: 0.9em;
 }
 .picture {
   position: absolute;
   top: 85px;
-  left: 400px;
+  left: 240px;
   height:var(--picture-size);
   width:var(--picture-size);
   border-radius: 50%;
@@ -56,11 +61,11 @@ a:visited {
 }
 .content__left,
 .content__right {
-  height: 100%;
+  height: 120%;
   padding: var(--base-padding);
 }
 .content__left {
-  width: 400px !important;
+  width: 240px !important;
   color: rgba(255, 255, 255, 0.59);
   background-color: var(--accent-color);
   
