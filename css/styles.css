@@ -29,7 +29,6 @@ a:visited {
   width:var(--picture-size);
   border-radius: 50%;
   border: 5px solid var(--accent-color);
-  /* content: url('icon.jpg'); */
   z-index: 2;
 }
 .banner {
@@ -61,7 +60,7 @@ a:visited {
   padding: var(--base-padding);
 }
 .content__left {
-  width: var(--left-column-width);
+  width: 400px;
   color: rgba(255, 255, 255, 0.59);
   background-color: var(--accent-color);
   
