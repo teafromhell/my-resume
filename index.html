@@ -82,6 +82,15 @@
                 :class="{ link: skill.url !== undefined}"
                 :href="skill.url"
               >
+                <span class="squarred-grid-item"> TypeScript </span>
+              </a>
+              <a
+                v-for="(skill, index) in person.skills"
+                class="grid-item"
+                :key="index"
+                :class="{ link: skill.url !== undefined}"
+                :href="skill.url"
+              >
                 <span class="squarred-grid-item"> React </span>
               </a>
               <a
